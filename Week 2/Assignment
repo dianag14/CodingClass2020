@@ -1,0 +1,51 @@
+PImage corn;
+PImage corn2;
+int    cornmove;
+int    center;
+
+int    image_width = 400;
+int    image_height = 600;
+
+void setup(){
+  
+  size(600,700);
+  corn = loadImage("data/corn6.jpg");
+  corn2 = loadImage("data/corn5.png");
+  corn.resize(image_width, image_height);
+  corn2.resize(image_width, image_height);
+
+}
+
+void draw(){
+  int px = mouseX-(image_width/2);
+  int py = mouseY-(image_height/2);
+
+  background(222,184,135);
+  fill(222,184,135);
+  stroke(255);
+  
+  tint(222,184,135);
+  image(corn, 100, 50); 
+  tint(188,143,143);
+  image(corn2, px, py); 
+  
+  push();
+  fill(0);
+  noStroke();
+  frameRate(4);
+  circle(random(500,600), random(100,200), 100);
+  
+  fill(0);
+  frameRate(4);
+  circle(random(50,150), random(500,600), 80);
+  
+  fill(222,184,135);
+  frameRate(4);
+  circle(random(400,500), random(300,400), 60);
+  
+  fill(222,184,135);
+  frameRate(4);
+  circle(random(20,120), random(100,400), 60);
+  pop();
+  
+}
